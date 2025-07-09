@@ -8,8 +8,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float yClampRange =  3f;
 
     [SerializeField] float controlRollFactor = 45f;
-    [SerializeField] float pitchRollFactor = 45f;
-    [SerializeField] float rotationSpeed = 10f;
+    [SerializeField] float pitchRollFactor = 15f;
+    [SerializeField] float rotationSpeed = 5f;
     Vector2 movement;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
