@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float yClampRange =  3f;
 
     [SerializeField] float controlRollFactor = 45f;
+    [SerializeField] float pitchRollFactor = 45f;
+    [SerializeField] float rotationSpeed = 10f;
     Vector2 movement;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -40,7 +42,8 @@ public class PlayerMovement : MonoBehaviour
     }
     private void ProcessRotation()
     {
-        Quaternion targetRotation = Quaternion.Euler(0f, 0f, -controlRollFactor * movement.x);
-        transform.localRotation = targetRotation;
+        Quaternion targetRotation = Quaternion.Euler(-pitchRollFactor * movement.y, 0f, -controlRollFactor * movement.x);
+        transform.localRotation = Quaternion.Lerp(transform.localRotation, targetRotation, rotationSpeed * Time.deltaTime);
+
     }
 }
