@@ -1,21 +1,14 @@
 using UnityEngine;
+using static UnityEngine.ParticleSystem;
 
 public class CollisionHandler : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] GameObject destroyedVFX;
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Ground") return;
-        Debug.Log("½Ã¹ß");
+        var Dparticle = Instantiate(destroyedVFX, transform.position, Quaternion.identity);
+        Dparticle.GetComponent<ParticleSystem>().Play();
+        Destroy(gameObject);
     }
 }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2961275727688910274}
   - component: {fileID: 7180395218052698323}
   m_Layer: 0
-  m_Name: DestroyedShipParticle
+  m_Name: Base Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
